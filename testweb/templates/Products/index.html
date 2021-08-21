@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en" dir="ltr"> 
+<head> 
+<meta charset="utf-8">
+<title></title> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-
+BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+<link rel="stylesheet" href="{% static "css/product.css"%}"> 
+ <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+</head> 
+<body> 
+<nav class='navbar navbar-default navbar-inverse'> 
+<div class="container"> 
+<div class="navbar-header"> 
+<a class="navbar-brand" href="/">testweb</a> 
+</div> 
+
+<ul class='nav navbar-nav navbar-right'> 
+{% if user.is_authenticated %}
+<li>Hello ,{{user.first_name}}</li>
+<li> <a href="/logout/">Logout</a> </li>
+{% else %}
+<li> <a href="/signup/">Signup</a> </li> 
+<li> <a href="/login/">Login</a> </li> 
+{% endif%}
+</ul> 
+</div> 
+</nav> 
+
+<div class="container" align="center"> 
+<div class="jumbotron"> 
+<h1>Product App...</h1> 
+<p>up to date Product information</p> 
+<a class="btn btn-primary btn-lg" href="/addproduct" role="button">Add Product</a> 
+<a class="btn btn-primary btn-lg" href="/listproduct" role="button">List Product</a> 
+</div> 
+</div> 
+</body> 
+</html> 

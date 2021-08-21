@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+
+{%load static %} 
+<html lang="en" dir="ltr"> 
+<head> 
+<meta charset="utf-8"> 
+<title></title> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-
+BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+<link rel="stylesheet" href="{% static "css/product.css"%}"> 
+<link href="https://fonts.googleapis.com/css?family=Merriweather"rel="stylesheet"> 
+</head> 
+<body> 
+<h1>Product Information</h1> 
+{% if product_list %} 
+<table> 
+<thead> 
+<th>Name</th> 
+<th>Weight</th> 
+<th>Price</th> 
+<th>created_at</th> 
+<th>updated_at</th> 
+</thead> 
+{% for Product in product_list%} 
+<tr> 
+<td>{{Product.name}}</td> 
+<td>{{Product.weight}}</td>
+<td>{{Product.price}}</td> 
+<td>{{Product.created_at}}</td> 
+<td>{{Product.updated_at}}</td> 
+</tr> 
+{% endfor %} 
+</table> 
+{% else %} 
+<p>No Product Found</p> 
+{%endif%} 
+</body> 
+</html>
